@@ -382,7 +382,7 @@ export default function Experience() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <span className="font-mono text-accent text-xs tracking-[0.2em] uppercase">
-                04 — Certifications
+                04 — Certificates
               </span>
               <h3 className="font-display font-bold text-3xl md:text-4xl text-light-50 tracking-tight mb-6 mt-4">
                 Professional Development

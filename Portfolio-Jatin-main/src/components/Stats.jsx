@@ -25,7 +25,7 @@ const stats = [
   { value: 400, suffix: "+", label: "LeetCode Problems" },
   { value: 3, suffix: " Live", label: "Projects Built" },
   { value: 8.0, suffix: "", label: "University CGPA", decimals: 1 },
-  { value: 5, suffix: "+", label: "Certifications" },
+  { value: 5, suffix: "+", label: "Certificates" },
 ];
 
 export default function Stats() {
