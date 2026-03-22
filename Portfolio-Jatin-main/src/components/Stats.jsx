@@ -30,7 +30,7 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section id="about" className="py-32 md:py-40 px-6 md:px-12 pb-6">
+    <section id="about" className="py-20 md:py-28 px-6 md:px-12 pb-2">
       <div className="max-w-7xl mx-auto">
         {/* Section label */}
         <motion.div
@@ -151,18 +151,6 @@ export default function Stats() {
         </div>
 
         {/* Full-Width: USP Callout */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="border-l-2 border-accent pl-6 py-2 my-10 pb-12 md:pb-16 w-full"
-        >
-          <p className="text-xl md:text-2xl font-display font-semibold text-accent leading-relaxed">
-            MERN Stack developer who builds real apps — not just tutorial clones.
-          </p>
-        </motion.div>
-
         {/* Full-Width: OPEN TO & Available */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start mb-16">
           {/* Open To Section */}

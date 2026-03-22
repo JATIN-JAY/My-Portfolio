@@ -44,7 +44,7 @@ export default function TechStack() {
   };
 
   return (
-    <section className="py-20 md:py-32 px-6 md:px-12 bg-dark">
+    <section className="py-12 md:py-20 px-6 md:px-12 bg-dark">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
