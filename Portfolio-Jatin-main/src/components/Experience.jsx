@@ -7,7 +7,7 @@ const experiences = [
   {
     type: "education",
     title: "B.Tech Computer Science and Engineering",
-    company: "Punjab Professional University, Punjab, India",
+    company: "Lovely Professional University, Punjab, India",
     period: "Aug 2023 — Present",
     details: [
       "CGPA: 8.0",
