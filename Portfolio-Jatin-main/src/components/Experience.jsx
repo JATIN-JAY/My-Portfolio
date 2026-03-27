@@ -2,6 +2,11 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Stack from "./Stack";
+import boardInfinityCert from "../assets/certificates/board-infinity.jpg";
+import nptelCert from "../assets/certificates/nptel.jpg";
+import javaCert from "../assets/certificates/java.png";
+import dsaCert from "../assets/certificates/dsa.jpg";
+import webDesignCert from "../assets/certificates/web-design.png";
 
 const experiences = [
   {
@@ -107,110 +112,88 @@ const achievements = [
 ];
 
 const certificateCards = [
-  <div className="w-full h-full flex flex-col p-6 gap-4 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
-    <div>
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">Board Infinity</p>
-      <h3 className="text-white text-lg font-bold leading-snug">Data Structures & Algorithms Training</h3>
+  <div className="w-full h-full flex flex-col p-3 gap-3 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
+    <div className="relative w-full flex-1 rounded-lg overflow-hidden bg-[#111] flex items-center justify-center">
+      <img src={boardInfinityCert} alt="Board Infinity Certificate" className="w-auto h-auto max-w-full max-h-full object-contain" />
     </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Covered core DSA concepts including Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, and Dynamic Programming. Solved 100+ coding problems focusing on time and space complexity analysis and optimization.</p>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex justify-between items-center">
-      <p className="text-[#c9a84c] text-xs">📅 May 2025 - Jun 2025</p>
-      <a href="https://boardinfinity.com" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded-lg hover:bg-white hover:shadow-md transition-all duration-300">View Certificate</a>
-    </div>
-  </div>,
-
-  <div className="w-full h-full flex flex-col p-6 gap-4 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
-    <div>
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">NPTEL</p>
-      <h3 className="text-white text-lg font-bold leading-snug">Privacy & Security on Online Social Media</h3>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Understood how data, identity, and privacy work across social platforms — stuff that actually matters when building real apps.</p>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex justify-between items-center">
-      <p className="text-[#c9a84c] text-xs">📅 Oct 2025</p>
-      <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs117/Course/NPTEL25CS117S55870041410544645.pdf" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded-lg hover:bg-white hover:shadow-md transition-all duration-300">View Certificate</a>
+    <div className="flex flex-col gap-2">
+      <div>
+        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-1">Board Infinity</p>
+        <h3 className="text-white text-sm font-bold leading-tight">Data Structures & Algorithms Training</h3>
+      </div>
+      <div className="border-t border-[#c9a84c] opacity-30"/>
+      <div className="flex justify-between items-center text-xs">
+        <p className="text-[#c9a84c]">📅 May 2025 - Jun 2025</p>
+        <a href="https://boardinfinity.com" target="_blank" rel="noopener noreferrer" className="px-2 py-1 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded hover:bg-white hover:shadow-md transition-all duration-300">View</a>
+      </div>
     </div>
   </div>,
 
-  <div className="w-full h-full flex flex-col p-6 gap-4 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
-    <div>
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">Self-paced Certification</p>
-      <h3 className="text-white text-lg font-bold leading-snug">Specialization in Java</h3>
+  <div className="w-full h-full flex flex-col p-3 gap-3 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
+    <div className="relative w-full flex-1 rounded-lg overflow-hidden bg-[#111] flex items-center justify-center">
+      <img src={nptelCert} alt="NPTEL Certificate" className="w-auto h-auto max-w-full max-h-full object-contain" />
     </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Got solid with OOP concepts, data structures in Java, and understanding how the language works under the hood.</p>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex justify-between items-center">
-      <p className="text-[#c9a84c] text-xs">📅 Feb 2025</p>
-      <a href="https://lpucolab438.examly.io/certificate/U2FsdGVkX19iL82wUqtNcByot24MqTYcMn17bcnrnUg%3D" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded-lg hover:bg-white hover:shadow-md transition-all duration-300">View Certificate</a>
-    </div>
-  </div>,
-
-  <div className="w-full h-full flex flex-col p-6 gap-4 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
-    <div>
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">Online Certification</p>
-      <h3 className="text-white text-lg font-bold leading-snug">Web Development Using MERN Stack</h3>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Went from knowing pieces to understanding how the full stack connects — frontend to backend to database.</p>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex justify-between items-center">
-      <p className="text-[#c9a84c] text-xs">📅 Jan 2025</p>
-      <a href="https://www.cipherschools.com/certificate/preview?id=67641cd1c8147ce0ed612289" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded-lg hover:bg-white hover:shadow-md transition-all duration-300">View Certificate</a>
+    <div className="flex flex-col gap-2">
+      <div>
+        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-1">NPTEL</p>
+        <h3 className="text-white text-sm font-bold leading-tight">Privacy & Security on Online Social Media</h3>
+      </div>
+      <div className="border-t border-[#c9a84c] opacity-30"/>
+      <div className="flex justify-between items-center text-xs">
+        <p className="text-[#c9a84c]">📅 Oct 2025</p>
+        <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM2/Ecertificates/106/noc25-cs117/Course/NPTEL25CS117S55870041410544645.pdf" target="_blank" rel="noopener noreferrer" className="px-2 py-1 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded hover:bg-white hover:shadow-md transition-all duration-300">View</a>
+      </div>
     </div>
   </div>,
 
-  <div className="w-full h-full flex flex-col p-6 gap-4 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
-    <div>
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">CipherSchools</p>
-      <h3 className="text-white text-lg font-bold leading-snug">Data Structures & Algorithms</h3>
+  <div className="w-full h-full flex flex-col p-3 gap-3 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
+    <div className="relative w-full flex-1 rounded-lg overflow-hidden bg-[#111] flex items-center justify-center">
+      <img src={javaCert} alt="Java Certificate" className="w-auto h-auto max-w-full max-h-full object-contain" />
     </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Built the problem-solving foundation I use every time I open LeetCode or think about how to structure code.</p>
-    </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex justify-between items-center">
-      <p className="text-[#c9a84c] text-xs">📅 Aug 2024</p>
-      <a href="https://www.cipherschools.com/certificate/preview?id=67641cd1c8147ce0ed612289" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded-lg hover:bg-white hover:shadow-md transition-all duration-300">View Certificate</a>
+    <div className="flex flex-col gap-2">
+      <div>
+        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-1">Self-paced Certification</p>
+        <h3 className="text-white text-sm font-bold leading-tight">Specialization in Java</h3>
+      </div>
+      <div className="border-t border-[#c9a84c] opacity-30"/>
+      <div className="flex justify-between items-center text-xs">
+        <p className="text-[#c9a84c]">📅 Feb 2025</p>
+        <a href="https://lpucolab438.examly.io/certificate/U2FsdGVkX19iL82wUqtNcByot24MqTYcMn17bcnrnUg%3D" target="_blank" rel="noopener noreferrer" className="px-2 py-1 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded hover:bg-white hover:shadow-md transition-all duration-300">View</a>
+      </div>
     </div>
   </div>,
 
-  <div className="w-full h-full flex flex-col p-6 gap-4 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
-    <div>
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">FreeCodeCamp</p>
-      <h3 className="text-white text-lg font-bold leading-snug">Responsive Web Design</h3>
+  <div className="w-full h-full flex flex-col p-3 gap-3 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
+    <div className="relative w-full flex-1 rounded-lg overflow-hidden bg-[#111] flex items-center justify-center">
+      <img src={dsaCert} alt="DSA Certificate" className="w-auto h-auto max-w-full max-h-full object-contain" />
     </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Learned to make things actually look good on every screen — not just desktop.</p>
+    <div className="flex flex-col gap-2">
+      <div>
+        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-1">CipherSchools</p>
+        <h3 className="text-white text-sm font-bold leading-tight">Data Structures & Algorithms</h3>
+      </div>
+      <div className="border-t border-[#c9a84c] opacity-30"/>
+      <div className="flex justify-between items-center text-xs">
+        <p className="text-[#c9a84c]">📅 Aug 2024</p>
+        <a href="https://www.cipherschools.com/certificate/preview?id=67641cd1c8147ce0ed612289" target="_blank" rel="noopener noreferrer" className="px-2 py-1 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded hover:bg-white hover:shadow-md transition-all duration-300">View</a>
+      </div>
     </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex-1">
-      <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-2">What I Learned</p>
-      <p className="text-light-300 text-sm leading-relaxed">Learned to make things actually look good on every screen — not just desktop.</p>
+  </div>,
+
+  <div className="w-full h-full flex flex-col p-3 gap-3 bg-[#111] border border-[#c9a84c] rounded-2xl transition-all duration-300" style={{boxShadow: "0 0 0 1px #c9a84c"}} onMouseEnter={(e) => { e.currentTarget.style.boxShadow = "0 0 30px rgba(201, 168, 76, 0.6), 0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(-4px)"; }} onMouseLeave={(e) => { e.currentTarget.style.boxShadow = "0 0 0 1px #c9a84c"; e.currentTarget.style.transform = "translateY(0)"; }}>
+    <div className="relative w-full flex-1 rounded-lg overflow-hidden bg-[#111] flex items-center justify-center">
+      <img src={webDesignCert} alt="Responsive Web Design Certificate" className="w-auto h-auto max-w-full max-h-full object-contain" />
     </div>
-    <div className="border-t border-[#c9a84c] opacity-30"/>
-    <div className="flex justify-between items-center">
-      <p className="text-[#c9a84c] text-xs">📅 Aug 2024</p>
-      <a href="https://www.freecodecamp.org/certification/fcc77e88f99-7d94-4bdc-9dad-897af5be8a26/responsive-web-design" target="_blank" rel="noopener noreferrer" className="px-3 py-1.5 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded-lg hover:bg-white hover:shadow-md transition-all duration-300">View Certificate</a>
+    <div className="flex flex-col gap-2">
+      <div>
+        <p className="text-[#c9a84c] text-xs uppercase tracking-widest mb-1">FreeCodeCamp</p>
+        <h3 className="text-white text-sm font-bold leading-tight">Responsive Web Design</h3>
+      </div>
+      <div className="border-t border-[#c9a84c] opacity-30"/>
+      <div className="flex justify-between items-center text-xs">
+        <p className="text-[#c9a84c]">📅 Aug 2024</p>
+        <a href="https://www.freecodecamp.org/certification/fcc77e88f99-7d94-4bdc-9dad-897af5be8a26/responsive-web-design" target="_blank" rel="noopener noreferrer" className="px-2 py-1 bg-[#c9a84c] text-[#111] text-xs font-semibold rounded hover:bg-white hover:shadow-md transition-all duration-300">View</a>
+      </div>
     </div>
   </div>
 ];
@@ -400,7 +383,7 @@ export default function Experience() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col items-center justify-center"
             >
-              <div style={{ width: '320px', height: '440px', margin: '0 auto' }}>
+              <div style={{ width: '420px', height: '540px', margin: '0 auto' }}>
                 <Stack
                   cards={certificateCards}
                   autoplay={true}
@@ -454,7 +437,7 @@ export default function Experience() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col items-center justify-center"
             >
-              <div style={{ width: '380px', height: '460px', margin: '0 auto' }}>
+              <div style={{ width: '420px', height: '540px', margin: '0 auto' }}>
                 <Stack
                   cards={achievementCards}
                   autoplay={true}
