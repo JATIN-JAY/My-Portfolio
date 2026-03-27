@@ -24,22 +24,38 @@ const techStack = [
 
 // STEP 2 — Calculate final grid positions
 function getGridPositions(stageW) {
-  const COLS = 6;  // Always 6 columns (6 per row, 2 rows total)
-  const ICON_W = 90;  // icon wrapper width (increased from 72)
-  const ICON_H = 110;  // icon wrapper height (increased from 90)
-  const COL_GAP = 48; // horizontal gap between icons
-  const ROW_GAP = 40; // vertical gap between icons
-  const TOTAL_W = ICON_W + COL_GAP;
-  const TOTAL_H = ICON_H + ROW_GAP;
-
-  const totalGridW = COLS * ICON_W + (COLS - 1) * COL_GAP;
-  const startX = Math.max(24, (stageW - totalGridW) / 2);
-  const startY = 20;
-
-  return techStack.map((_, i) => ({
-    x: startX + (i % COLS) * TOTAL_W,
-    y: startY + Math.floor(i / COLS) * TOTAL_H,
-  }));
+  const ICON_W = 90;
+  const ICON_H = 110;
+  const COL_GAP = 24;
+  const ROW_GAP = 16;
+  
+  // Pyramid pattern: 3, 4, 5, 4, 3 = 19 items
+  const pyramidShape = [3, 4, 5, 4, 3];
+  
+  const positions = [];
+  let itemIndex = 0;
+  
+  for (let rowIndex = 0; rowIndex < pyramidShape.length; rowIndex++) {
+    const itemsInRow = pyramidShape[rowIndex];
+    
+    // Calculate row width
+    const rowWidth = itemsInRow * ICON_W + (itemsInRow - 1) * COL_GAP;
+    
+    // Center this row horizontally
+    const startX = (stageW - rowWidth) / 2;
+    const startY = 20 + rowIndex * (ICON_H + ROW_GAP);
+    
+    // Add positions for items in this row
+    for (let i = 0; i < itemsInRow && itemIndex < techStack.length; i++) {
+      positions.push({
+        x: startX + i * (ICON_W + COL_GAP),
+        y: startY,
+      });
+      itemIndex++;
+    }
+  }
+  
+  return positions;
 }
 
 // STEP 3 — Calculate random spawn positions
