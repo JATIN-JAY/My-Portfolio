@@ -2,7 +2,11 @@ import { useEffect, useRef } from "react";
 
 const techStack = [
   { name: "React.js", icon: "react" },
+  { name: "Next.js", icon: "nextjs" },
   { name: "JavaScript", icon: "javascript" },
+  { name: "TypeScript", icon: "typescript" },
+  { name: "HTML 5", icon: "html5" },
+  { name: "CSS 3", icon: "css3" },
   { name: "TailwindCSS", icon: "tailwindcss" },
   { name: "Node.js", icon: "nodejs" },
   { name: "Express", icon: "express" },
@@ -13,6 +17,9 @@ const techStack = [
   { name: "Java", icon: "java" },
   { name: "C++", icon: "cplusplus" },
   { name: "Docker", icon: "docker" },
+  { name: "Git", icon: "git" },
+  { name: "GitHub", icon: "github" },
+  { name: "Postman", icon: "postman" },
 ];
 
 // STEP 2 — Calculate final grid positions
@@ -241,7 +248,7 @@ export default function TechStack() {
         style={{
           position: "relative",
           width: "100%",
-          height: "420px",
+          height: "600px",
           maxWidth: "900px",
           margin: "0 auto",
         }}
