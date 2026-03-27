@@ -8,10 +8,6 @@ const navLinks = [
   { label: "Contact", href: "#contact" },
 ];
 
-const externalLinks = [
-  { label: "Resume", href: "https://drive.google.com/file/d/1OCY3cLyXG8lVxH5u8PsVtMCOsUfxxy6U/view?usp=sharing", external: true },
-];
-
 export default function Navigation() {
   const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -28,6 +24,15 @@ export default function Navigation() {
     }
     setScrolled(latest > 50);
   });
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "/Drive CV Feb 2025.pdf";
+    link.download = "Jatin-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -71,17 +76,12 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
-            {externalLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-light-500 text-[13px] font-body hover:text-accent transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
+            <button
+              onClick={downloadResume}
+              className="px-4 py-2 text-[13px] font-body border border-accent text-accent hover:bg-accent hover:text-dark transition-all duration-300 rounded-md"
+            >
+              Download Resume
+            </button>
           </motion.div>
 
           {/* Mobile menu button */}
@@ -141,22 +141,19 @@ export default function Navigation() {
                   {link.label}
                 </motion.a>
               ))}
-              {externalLinks.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMenuOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ delay: (navLinks.length + i) * 0.08 }}
-                  className="font-display text-3xl font-bold text-accent hover:text-light-200 transition-colors"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              <motion.button
+                onClick={() => {
+                  downloadResume();
+                  setMenuOpen(false);
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: navLinks.length * 0.08 }}
+                className="px-6 py-3 text-lg font-display border border-accent text-accent hover:bg-accent hover:text-dark transition-all duration-300 rounded-md"
+              >
+                Download Resume
+              </motion.button>
             </nav>
           </motion.div>
         )}
