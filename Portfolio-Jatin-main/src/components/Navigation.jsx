@@ -25,14 +25,7 @@ export default function Navigation() {
     setScrolled(latest > 50);
   });
 
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Drive CV Feb 2025.pdf";
-    link.download = "Jatin-Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+
 
   return (
     <>
@@ -76,12 +69,6 @@ export default function Navigation() {
                 {link.label}
               </a>
             ))}
-            <button
-              onClick={downloadResume}
-              className="px-4 py-2 text-[13px] font-body border border-accent text-accent hover:bg-accent hover:text-dark transition-all duration-300 rounded-md"
-            >
-              Download Resume
-            </button>
           </motion.div>
 
           {/* Mobile menu button */}
@@ -141,19 +128,7 @@ export default function Navigation() {
                   {link.label}
                 </motion.a>
               ))}
-              <motion.button
-                onClick={() => {
-                  downloadResume();
-                  setMenuOpen(false);
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{ delay: navLinks.length * 0.08 }}
-                className="px-6 py-3 text-lg font-display border border-accent text-accent hover:bg-accent hover:text-dark transition-all duration-300 rounded-md"
-              >
-                Download Resume
-              </motion.button>
+
             </nav>
           </motion.div>
         )}
