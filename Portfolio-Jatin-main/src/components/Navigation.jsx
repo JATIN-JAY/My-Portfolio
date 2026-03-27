@@ -152,6 +152,8 @@ export default function Navigation() {
               >
                 Download Resume
               </motion.button>
+            </nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
