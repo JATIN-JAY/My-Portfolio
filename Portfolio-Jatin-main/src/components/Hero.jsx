@@ -29,7 +29,7 @@ export default function Hero() {
   const nameBottom = "SINGH";
 
   const downloadResume = () => {
-    window.open("https://drive.google.com/file/d/1OCY3cLyXG8lVxH5u8PsVtMCOsUfxxy6U/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/1JwIgyq1Ia4Ho482B2aoctl_wb2pmrMLv/view?usp=sharing", "_blank");
   };
 
   return (
