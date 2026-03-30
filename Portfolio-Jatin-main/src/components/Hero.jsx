@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Download } from "lucide-react";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -26,6 +27,10 @@ export default function Hero() {
 
   const nameTop = "JATIN";
   const nameBottom = "SINGH";
+
+  const downloadResume = () => {
+    window.open("https://drive.google.com/file/d/1OCY3cLyXG8lVxH5u8PsVtMCOsUfxxy6U/view?usp=sharing", "_blank");
+  };
 
   return (
     <section
@@ -100,15 +105,24 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Description */}
-        <motion.p
+        {/* Tagline and CTA Button */}
+        <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="text-[#c9a84c] text-[clamp(1.2rem,2.5vw,2rem)] mt-8 mb-6 max-w-4xl mx-auto leading-relaxed font-body font-medium"
+          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 mt-8 mb-6"
         >
-          I create websites that go from visible to invincible
-        </motion.p>
+          <p className="text-[#c9a84c] text-[clamp(1.1rem,2.2vw,2rem)] leading-relaxed font-body font-bold whitespace-normal sm:whitespace-nowrap">
+            I create websites that go from visible to invincible
+          </p>
+          <button
+            onClick={downloadResume}
+            className="resume-button"
+          >
+            <Download size={20} />
+            Download Resume
+          </button>
+        </motion.div>
 
         {/* CTA Links */}
         <motion.div

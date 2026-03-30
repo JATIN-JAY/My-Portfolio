@@ -49,6 +49,55 @@
   }
 }
 
+/* Premium Resume Button */
+.resume-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  background: transparent;
+  border: 2px solid #c9a84c;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: color 0.35s ease, transform 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.resume-button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #c9a84c;
+  z-index: -1;
+  transition: width 0.35s ease;
+}
+
+.resume-button:hover {
+  color: #000000;
+  transform: scale(1.02);
+}
+
+.resume-button:hover::before {
+  width: 100%;
+}
+
+.resume-button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke-width: 2.5;
+}
+
 #backToTop {
   position: fixed;
   bottom: 30px;
