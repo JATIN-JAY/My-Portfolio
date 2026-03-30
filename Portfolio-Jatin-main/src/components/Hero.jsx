@@ -57,9 +57,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mb-10"
+          className="mb-6"
         >
-          <span className="text-accent font-mono text-xs tracking-[0.3em] uppercase">
+          <span className="text-[#c9a84c] font-bold text-[clamp(2rem,5vw,4.5rem)] tracking-[0.25em] uppercase leading-tight font-display">
             Full-Stack Developer
           </span>
         </motion.div>
@@ -105,9 +105,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="text-accent text-base md:text-lg mt-14 max-w-lg mx-auto leading-relaxed font-body font-light"
+          className="text-[#c9a84c] text-[clamp(1.2rem,2.5vw,2rem)] mt-8 mb-6 max-w-4xl mx-auto leading-relaxed font-body font-medium"
         >
-          I build things for the web — fast, clean, and actually useful.
+          I create websites that go from visible to invincible
         </motion.p>
 
         {/* CTA Links */}
