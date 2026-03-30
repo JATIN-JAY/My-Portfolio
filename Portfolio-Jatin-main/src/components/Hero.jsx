@@ -59,14 +59,24 @@ export default function Hero() {
       >
         {/* Role label */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="mb-6"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          className="mb-6 overflow-hidden"
         >
-          <span className="text-[#c9a84c] font-bold text-[clamp(2rem,5vw,4.5rem)] tracking-[0.25em] uppercase leading-tight font-display">
+          <motion.span 
+            className="text-[#c9a84c] font-bold text-[clamp(2rem,5vw,4.5rem)] tracking-[0.25em] uppercase leading-tight font-display inline-block"
+            animate={{
+              textShadow: [
+                "0 0 0px rgba(201, 168, 76, 0)",
+                "0 0 20px rgba(201, 168, 76, 0.3)",
+                "0 0 10px rgba(201, 168, 76, 0.2)",
+              ]
+            }}
+            transition={{ duration: 2.5, delay: 1.2, repeat: Infinity, repeatType: "loop" }}
+          >
             Full-Stack Developer
-          </span>
+          </motion.span>
         </motion.div>
 
         {/* Name — First line */}
